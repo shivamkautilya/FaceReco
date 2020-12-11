@@ -1,9 +1,9 @@
  //Face-api models loading promise
  Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/Face-Detection-JavaScript-master/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models')
 ]).then(startVideo)
 
 
