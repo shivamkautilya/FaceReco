@@ -1,0 +1,35 @@
+html,body{
+    margin:0;
+    padding:0;
+}
+
+body {
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      position: absolute;
+      
+    }
+
+.heading{
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: underline;
+  font-size: 2rem;
+  color: rgb(78, 134, 236);
+}
+
+.text-center{text-align:center;}
+.padding-topBottom-20{padding: 20px 0;}
+.padding-10{padding: 10px;}
+.outline:hover,.outline:active{background-color: #fff;color: #007BFF}
+
+
+.color-ffffffb3{color:#FFFFFFB3;}
+/*ftco*/
