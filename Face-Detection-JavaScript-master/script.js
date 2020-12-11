@@ -10,7 +10,7 @@
 function triggerVideo() { //Webcam turns on when triggered
 
 //Now code to access webcam
-  var startVideo = { audio: false, video: { width: 360, height: 480 } }; 
+  var startVideo = { audio: false, video: { width: 360, height:580 } }; 
 
   navigator.mediaDevices.getUserMedia(startVideo)
   .then(function(mediaStream) {
