@@ -4,29 +4,108 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <script src="face-api.min.js"></script>
-  <script src="script.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="shortcut icon" href="../images/" type="image/x-icon">
+  <!-- <link rel="stylesheet" href="../Face-Detection-JavaScript-master/styling.css"> -->
+  <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
+<script type="text/javascript" src="../Face-Recognition-JavaScript/jquery.facedetection.min.js"></script>
+
   <title>Face Recognition</title>
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      width: 100vw;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column
-    }
+    
+.text-center{text-align:center;}
+.padding-topBottom-20{padding: 20px 0;}
+.padding-10{padding: 10px;}
+.outline:hover,.outline:active{background-color: #fff;color: #007BFF}
 
-    canvas {
+
+.color-ffffffb3{color:#FFFFFFB3;}
+  
+    .face{
       position: absolute;
-      top: 0;
-      left: 0;
+      border: 2px solid #1545e2;
+    }
+    #detect{
+      margin-left: 15%;
+      cursor: pointer;
+      cursor: hand;}
+    #preview{
+      max-width: 480px;
+      height: auto;
+    }
+    #loadUpdate{
+      text-align: center;
+    }
+    @media only screen and (max-width: 576px){
+      #preview{
+        max-width: 360px;
+      }
     }
   </style>
 </head>
 <body>
-  <input type="file" id="imageUpload">
+
+  <div><img src="" id="preview" class="pic"></div>
+  <div>
+  
+  <p class="text-center padding-topBottom-20">
+    <input type="file" id="filetag"><br>
+    <button id="detect" class="btn btn-outline-primary btn-lg" >Start Detection</button>
+</p>
+  <h5 id="loadUpdate"></h5>
+
+  <p><a href="../index.html" class="btn btn-primary btn-lg btn-block outline" role="button" aria-pressed="false"><span class="icon icon-home"></span>Back To Home</a></p> 
+</div>
+  <!-- script to upload image starts here -->
+  <script>
+      var fileTag = document.getElementById("filetag"),
+        preview = document.getElementById("preview");
+        
+    fileTag.addEventListener("change", function() {
+      changeImage(this);
+    });
+
+    function changeImage(input) {
+      var reader;
+
+      if (input.files && input.files[0]) {
+        reader = new FileReader();
+
+        reader.onload = function(e) {
+          preview.setAttribute('src', e.target.result);
+        }
+
+        reader.readAsDataURL(input.files[0]);
+      }
+    }
+</script>
+  <!-- script to detect face starts -->
+  <script>
+    $("#detect").click(function(){
+
+  $(".pic").faceDetection({
+    complete:function(faces){
+      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.YOu can choose other image to check again";
+      for(var i=0;i<faces.length;i++){
+        $('<div>',{
+          'class':'face',
+          'css':{
+            'position':'absolute',
+            'left':faces[i].x*faces[i].scaleX+'px',
+            'top':faces[i].y*faces[i].scaleY+'px',
+            'width':faces[i].width*faces[i].scaleX+'px',
+            'height':faces[i].height*faces[i].scaleY+'px'
+          }
+        })
+        .insertAfter(this);
+      }
+    },
+    error:function(code,message){
+      alert("Error: "+message);
+    }
+  });
+});
+  </script>
 </body>
 </html>
