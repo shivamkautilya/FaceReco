@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--
 	Author: Shivam Kautilya
-	This is home page of FaceReco(url).
+	This is home page of FaceReco(rajshivam94.github.io/FaceReco).
 	This page was created on 8 December 2020.
 -->
 <html lang="en">
@@ -9,15 +9,18 @@
     <title>FaceReco | Face Detector Web App</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+    <link rel="shortcut icon" href="/images/logo.jpg" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-
+	<link rel="shortcut icon" href="images/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/ionicons.min.css">
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script type="text/javascript" src="Face-Recognition-JavaScript/jquery.facedetection.min.js"></script>
+
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 	  
@@ -32,8 +35,8 @@
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
 	          <li class="nav-item"><a href="/index.html" class="nav-link"><span>Home</span></a></li>
-	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>FaceReco</span></a></li>
-	          <li class="nav-item"><a href="/Face-Detection-JavaScript-master/index.html" class="nav-link"><span>Realtime Face Recognition</span></a></li>
+	          <li class="nav-item"><a href="/FaceReco/Face-Recognition-JavaScript/index.html" class="nav-link"><span>FaceReco</span></a></li>
+	          <li class="nav-item"><a href="/FaceReco/Face-Detection-JavaScript-master/index.html" class="nav-link"><span>Realtime Face Recognition</span></a></li>
 	        </ul>
 	      </div>
 	    </div>
@@ -57,54 +60,20 @@
           </div>
         </div>
       </div>
-      <div class="mouse">
-				<a href="#about-section" class="mouse-icon">
-					<div class="mouse-wheel"><span class="ion-ios-arrow-round-down"></span></div>
-				</a>
-		</div>
        
     </section>
-
-    <section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
-    	<div class="container">
-    		<div class="row d-flex no-gutters">
-    			<div class="col-md-6 col-lg-6 d-flex">
-    				<div class="img-about img d-flex align-items-stretch">
-    					<div class="overlay"></div>
-	    				<div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/about.jpg);">
-	    				</div>
-    				</div>
-    			</div>
-    			<div class="col-md-6 col-lg-6 pl-md-5 py-5">
-    				<div class="row justify-content-start pb-3">
-		          <div class="col-md-12 heading-section ftco-animate">
-		          	<h1 class="big">About</h1>
-		            <h2 class="mb-4">About Me</h2>
-		            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-		            <ul class="about-info mt-4 px-md-0 px-2">
-		            	<li class="d-flex"><span>Name:</span> <span>Ronaldo Fredrickson</span></li>
-		            	<li class="d-flex"><span>Date of birth:</span> <span>November 28, 1989</span></li>
-		            	<li class="d-flex"><span>Address:</span> <span>San Francisco CA 97987 USA</span></li>
-		            	<li class="d-flex"><span>Zip code:</span> <span>1000</span></li>
-		            	<li class="d-flex"><span>Email:</span> <span>ronaldo@gmail.com</span></li>
-		            	<li class="d-flex"><span>Phone: </span> <span>+1-2234-5678-9-0</span></li>
-		            </ul>
-		          </div>
-		        </div>
-	          <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-              	<p class="mb-4">
-	                <span class="number" data-number="120">0</span>
-	                <span>Project complete</span>
-                </p>
-                <p><a href="#" class="btn btn-primary py-3 px-3">Download CV</a></p>
-              </div>
-	          </div>
-	        </div>
-        </div>
-    	</div>
-	</section>
-	
+	<section class="ftco-section ftco-realtime-fd img" style="background-image: url(images/bg_1.jpg)" id="try-another">
+    	<div class="overlay"></div>
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-md-7 ftco-animate text-center">
+						<h2>Have you tried <span>FaceReco</span>.</h2>
+						<p>A web app which can detect face(s) in uploaded image.</p>
+						<p class="mb-0"><a href="/FaceReco/Face-Recognition-JavaScript/index.html" class="btn btn-primary py-3 px-5">Try Now</a></p>
+					</div>
+				</div>
+			</div>
+		</section>
     <section class="ftco-section ftco-realtime-fd img" style="background-image: url(images/bg_1.jpg)" id="try-another">
     	<div class="overlay"></div>
 			<div class="container">
@@ -112,7 +81,7 @@
 					<div class="col-md-7 ftco-animate text-center">
 						<h2>Have you tried <span>Realtime Face Detector</span>.</h2>
 						<p>A web app which can detect your face at realtime using device camera.</p>
-						<p class="mb-0"><a href="/Face-Detection-JavaScript-master/index.html" class="btn btn-primary py-3 px-5">Try Now</a></p>
+						<p class="mb-0"><a href="/FaceReco/Face-Detection-JavaScript-master/index.html" class="btn btn-primary py-3 px-5">Try Now</a></p>
 					</div>
 				</div>
 			</div>
@@ -149,8 +118,32 @@
       </div>
     </footer>
     
-  
-
+    <script>
+		$("#detect").click(function(){
+	  alert("Detecting Face ..............");
+	  $(".pic").faceDetection({
+		complete:function(faces){
+		  alert("Detection Complete");
+		  for(var i=0;i<faces.length;i++){
+			$('<div>',{
+			  'class':'face',
+			  'css':{
+				'position':'absolute',
+				'left':faces[i].x*faces[i].scaleX+'px',
+				'top':faces[i].y*faces[i].scaleY+'px',
+				'width':faces[i].width*faces[i].scaleX+'px',
+				'height':faces[i].height*faces[i].scaleY+'px'
+			  }
+			})
+			.insertAfter(this);
+		  }
+		},
+		error:function(code,message){
+		  alert("Error: "+message);
+		}
+	  });
+	});
+</script>
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 

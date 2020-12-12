@@ -1,16 +1,16 @@
  //Face-api models loading promise
  Promise.all([
-  faceapi.nets.tinyFaceDetector.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceLandmark68Net.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceRecognitionNet.loadFromUri('/Face-Detection-JavaScript-master/models'),
-  faceapi.nets.faceExpressionNet.loadFromUri('/Face-Detection-JavaScript-master/models')
+  faceapi.nets.tinyFaceDetector.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceLandmark68Net.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceRecognitionNet.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models'),
+  faceapi.nets.faceExpressionNet.loadFromUri('/FaceReco/Face-Detection-JavaScript-master/models')
 ]).then(startVideo)
 
 
 function triggerVideo() { //Webcam turns on when triggered
 
 //Now code to access webcam
-  var startVideo = { audio: false, video: { width: 360, height: 480 } }; 
+  var startVideo = { audio: false, video: { width: 360, height:580 } }; 
 
   navigator.mediaDevices.getUserMedia(startVideo)
   .then(function(mediaStream) {
