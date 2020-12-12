@@ -17,6 +17,7 @@
 .text-center{text-align:center;}
 .padding-topBottom-20{padding: 20px 0;}
 .padding-10{padding: 10px;}
+.padding-topBottom-5{padding: 5px 0;}
 .outline:hover,.outline:active{background-color: #fff;color: #007BFF}
 
 
@@ -34,7 +35,7 @@
       max-width: 480px;
       height: auto;
     }
-    #loadUpdate{
+    #loadUpdate,h4{
       text-align: center;
     }
     @media only screen and (max-width: 576px){
@@ -42,18 +43,24 @@
         max-width: 360px;
       }
     }
+    .btn-custom:visited{
+      background-color: #007BFF;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
-
   <div><img src="" id="preview" class="pic"></div>
   <div>
-  
   <p class="text-center padding-topBottom-20">
-    <input type="file" id="filetag"><br>
-    <button id="detect" class="btn btn-outline-primary btn-lg" >Start Detection</button>
+    <input type="file" id="filetag">
+    <p class="padding-topBottom-5"></p>
+
+    <button id="detect" class="btn btn-outline-primary btn-lg btn-custom" >Start Detection</button>
 </p>
-  <h5 id="loadUpdate">Wait for while after choosing image</h5>
+
+  <h5 id="loadUpdate"></h5>
+  <h4 ><a href="index.html" id="tryAgain" role="button"></a></h4>
 
   <p><a href="../index.html" class="btn btn-primary btn-lg btn-block outline" role="button" aria-pressed="false"><span class="icon icon-home"></span>Back To Home</a></p> 
 </div>
@@ -83,10 +90,12 @@
   <!-- script to detect face starts -->
   <script>
     $("#detect").click(function(){
-
+      alert("Detection started...Please wait");
   $(".pic").faceDetection({
     complete:function(faces){
-      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.YOu can choose other image to check again";
+      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.";
+      document.getElementById("tryAgain").innerHTML = "Try Again";
+
       for(var i=0;i<faces.length;i++){
         $('<div>',{
           'class':'face',
