@@ -93,7 +93,7 @@
       alert("Detection started...Please wait");
   $(".pic").faceDetection({
     complete:function(faces){
-      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.";
+      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.It may be inaccurate sometimes.";
       document.getElementById("tryAgain").innerHTML = "Try Again";
 
       for(var i=0;i<faces.length;i++){
