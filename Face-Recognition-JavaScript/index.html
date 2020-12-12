@@ -6,12 +6,20 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="shortcut icon" href="../images/" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+  
+  <link rel="stylesheet" href="../css/ionicons.min.css">
+  <link rel="stylesheet" href="../css/flaticon.css">
+  <link rel="stylesheet" href="../css/icomoon.css">
   <!-- <link rel="stylesheet" href="../Face-Detection-JavaScript-master/styling.css"> -->
   <script type="text/javascript" src="jquery-latest.min.js"></script>
   <link rel="shortcut icon" href="../images/logo.jpg" type="image/x-icon">
 <script type="text/javascript" src="jquery.facedetection.min.js"></script>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>Face Recognition</title>
+  <title>FaceReco | Face Detector Web App</title>
   <style>
     
 .text-center{text-align:center;}
@@ -49,21 +57,57 @@
     }
   </style>
 </head>
-<body>
-  <div><img src="" id="preview" class="pic"></div>
+<body  data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+  <section>
+
+  <div>
+
+    <img src="" id="preview" class="pic"></div>
   <div>
   <p class="text-center padding-topBottom-20">
+    <p class="padding-topBottom-5"></p>
     <input type="file" id="filetag">
     <p class="padding-topBottom-5"></p>
-
-    <button id="detect" class="btn btn-outline-primary btn-lg btn-custom" >Start Detection</button>
-</p>
-
+    <button id="detect" class="btn btn-outline-primary btn-lg btn-custom" >Start Detection</button></p>
   <h5 id="loadUpdate"></h5>
   <h4 ><a href="index.html" id="tryAgain" role="button"></a></h4>
-
   <p><a href="../index.html" class="btn btn-primary btn-lg btn-block outline" role="button" aria-pressed="false"><span class="icon icon-home"></span>Back To Home</a></p> 
+
 </div>
+</section>
+ 
+  <!--footer-->
+  <footer class="ftco-footer ftco-section">
+    <div class="container">
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">About</h2>
+            <p>FaceReco can detect face(s) in a uploaded image.<br>Realtime Face Detector can detect your face when device camera is on.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="ftco-footer-widget mb-4">
+            <h2 class="ftco-heading-2">Want to give feedback?</h2>
+            <div class="block-23 mb-3">
+              <ul>
+        <li><a href="mailto:rajshivam287@gmail.com"><span class="icon icon-contact_mail"></span><span class="text">rajshivam287@gmail.com</span></a></li>
+        <li><span class="icon icon-info-circle"></span><span class="text">Computer Project for Science Exhibition.<br>Name: Shivam Kautilya<br>Class: IX | Roll no.24</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p>Copyright &copy; All rights reserved 2020 | FaceReco is developed by <u>Shivam Kautilya</u></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
   <!-- script to upload image starts here -->
   <script>
       var fileTag = document.getElementById("filetag"),
@@ -93,7 +137,7 @@
       alert("Detection started...Please wait");
   $(".pic").faceDetection({
     complete:function(faces){
-      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.It may be inaccurate sometimes.";
+      document.getElementById("loadUpdate").innerHTML = "Face Detected successfully.It may be sometime inaccurate";
       document.getElementById("tryAgain").innerHTML = "Try Again";
 
       for(var i=0;i<faces.length;i++){
@@ -116,5 +160,7 @@
   });
 });
   </script>
+
+  <!-- External javascript links -->
 </body>
 </html>
